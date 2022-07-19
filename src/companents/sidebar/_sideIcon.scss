@@ -4,14 +4,12 @@
    display: flex;
    flex-direction: column;
    width: 70px;
- //  height: 40vh;
    padding-top: 2rem;
-   transition: transform 0.2s ease-in;
    .iconList {
       display: flex;
       flex-direction: column;
       align-items: center;
-list-style: none;
+      list-style: none;
       padding: 0.6rem 0.5rem;
      
       cursor: pointer;
@@ -20,7 +18,7 @@ list-style: none;
        text-align: center;
          font-size: 10px;
          font-weight: 400;
-         //letter-spacing: 0.4px;
+
       }
 
       &:hover {
@@ -40,15 +38,12 @@ list-style: none;
        li {
           justify-content: center;
        }
-       span {
-          display: none;
-       }
+      
     }
  }
  @media (max-width: $breakpoint-small) {
     .sideIcon {
-       transform: translateX(-100%);
-
+      // transform: translateX(-100%);
        position: fixed;
        z-index: 999;
     }

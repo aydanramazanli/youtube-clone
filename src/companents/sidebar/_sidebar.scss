@@ -9,8 +9,6 @@
    width: 250px;
    height: 90vh;
    padding-top: 2rem;
-   transition: transform 0.2s ease-in;
-   
    .list {
       display: flex;
       align-items: center;
@@ -43,16 +41,16 @@ list-style: none;
        li {
           justify-content: center;
        }
-       span {
-          display: none;
-       }
+     
     }
  }
  @media (max-width: $breakpoint-small) {
     .sidebar {
-       transform: translateX(-100%);
-
        position: fixed;
        z-index: 999;
+      
+      li> span{
+         font-size:8px;
+       }
     }
  }
