@@ -7,14 +7,15 @@
 
    padding: 1rem 3rem;
 
-   background-color: $black-primary;
+  // background-color: $black-primary;
 
    height: 10vh;
    width: 100%;
 
    z-index: 999;
    &__menu {
-      display: none;
+      //display: none;
+      color:$white;
    }
    &__logo {
       width: 80px;
@@ -30,7 +31,7 @@
       margin: 0 1rem;
       border-radius: 3px;
       border: 1.2px solid;
-      background-color: $black-secondary;
+      background-color: $black;
 
       input {
          width: 100%;
