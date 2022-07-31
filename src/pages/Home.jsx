@@ -9,7 +9,6 @@ function Home() {
       <Container>
         <Category />
         <Row>
-        
           {[...new Array(20)].map(() => (
             <Col Lg={3} md={4} sm={5}>
               <Video />
