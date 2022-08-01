@@ -8,9 +8,9 @@ function Home() {
     <>
       <Container>
         <Category />
-        <Row>
+        <Row style={{ background:"#000", paddingTop:"0.5rem"}}>
           {[...new Array(20)].map(() => (
-            <Col lg="4" md={4} sm={5}>
+            <Col lg={3} md={4}>
               <Video />
             </Col>
           ))}
