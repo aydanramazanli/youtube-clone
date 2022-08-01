@@ -4,16 +4,11 @@ import { FaBars } from "react-icons/fa"
 import { AiOutlineSearch } from "react-icons/ai"
 import { MdNotifications, MdApps } from "react-icons/md"
 import logo from "../../images/youtube-logo-png-31812.png"
-import axios from "axios"
+
 
 function Header({handleClick}) {
 
-   const func=async()=>{
-      const api=await fetch("https://lb.devhq.io/whalecard/talent-search/v2/api-docs")
-      console.log(api)
 
-   } 
-   func()
   return (
     <div className="header">
       <FaBars className="header__menu" size={26} onClick={handleClick}/>
