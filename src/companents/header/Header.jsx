@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./_header.scss";
 import { FaBars } from "react-icons/fa"
 import { AiOutlineSearch } from "react-icons/ai"
