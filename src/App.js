@@ -12,7 +12,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 const Layout = ({ children }) => {
-  console.log(children);
+
   const [visible, setVisible] = useState(true);
 
   const handleClick = () => {

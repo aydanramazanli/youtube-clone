@@ -35,16 +35,17 @@
  @media (max-width: $breakpoint-medium) {
     .sideIcon {
        width: 90px;
+   
        li {
           justify-content: center;
        }
       
     }
  }
- @media (max-width: $breakpoint-small) {
-    .sideIcon {
-      // transform: translateX(-100%);
-       position: fixed;
-       z-index: 999;
-    }
-  }
+//  @media (max-width: $breakpoint-small) {
+//     .sideIcon {
+    
+//        position: fixed;
+//        z-index: 999;
+//     }
+//   }

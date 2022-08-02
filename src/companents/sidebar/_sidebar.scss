@@ -46,11 +46,10 @@ list-style: none;
  }
  @media (max-width: $breakpoint-small) {
     .sidebar {
-       position: fixed;
-       z-index: 999;
+     display:none;
       
-      li> span{
-         font-size:8px;
-       }
+      // li> span{
+      //    font-size:8px;
+      //  }
     }
  }

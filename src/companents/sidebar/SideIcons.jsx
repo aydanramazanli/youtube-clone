@@ -2,12 +2,10 @@ import "./_sideIcon.scss";
 
 import {
     MdSubscriptions,
-    MdExitToApp,
     MdThumbUp,
     MdHistory,
     MdLibraryBooks,
     MdHome,
-    MdSentimentDissatisfied,
  } from "react-icons/md"
 
 function SideIcons() {
@@ -36,10 +34,6 @@ function SideIcons() {
         <MdLibraryBooks size={23} />
         <h3 >Library</h3>
      </li>
-    
-    
- 
-
      <hr />
 </nav>
   )

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './_category.scss'
+import uniqid from 'uniqid';
 
 const keywords = [
   'All',
@@ -10,15 +11,14 @@ const keywords = [
   'Redux',
   'Music',
   'Algorithm Art ',
-  'Guitar',
-  'Bengali Songs',
+  'Python',
+  'Csharp',
   'Coding',
   'Cricket',
-  'Football',
-  'Real Madrid',
+  'Marvel',
+  'DC',
   'Gatsby',
-  'Poor Coder',
-  'Shwetabh',
+ 
 ]
 
 function Category() {
@@ -31,8 +31,8 @@ function Category() {
 
   return (
     <div className="categories">
-      {keywords.map((keyword,index)=>{
-        return <span key={index} onClick={()=>handleClick(keyword)} ClassName={active===keyword? "active" : null}>{keyword}</span>
+      {keywords.map((keyword)=>{
+        return <span key={uniqid()} onClick={()=>handleClick(keyword)} className={active===keyword? "active" : null}>{keyword}</span>
       })}
     </div>
   )
