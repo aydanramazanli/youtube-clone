@@ -15,14 +15,17 @@ export const loginAuth = () => async (dispatch) => {
     const provider = new firebase.auth.GoogleAuthProvider();
 
     const result = await auth.signInWithPopup(provider);
-    console.log(result);
+
 
     const accessToken = result.credential.accessToken;
     const profile = {
       name: result.additionalUserInfo.profile.name,
       photoUrl: result.additionalUserInfo.profile.picture,
     };
-    console.log(profile);
+
+    sessionStorage.setItem("accessToken", accessToken)
+    sessionStorage.setItem("user", JSON.stringify( profile))
+
 
     dispatch({ type: LOGIN_SUCCESS, payload: accessToken });
    
@@ -32,3 +35,15 @@ export const loginAuth = () => async (dispatch) => {
     dispatch({ type: LOGIN_FAIL, payload:err.message });
   }
 };
+
+export const logoutAuth=()=>async (dispatch)=>{
+  try{
+    await auth.signOut();
+    sessionStorage.removeItem("accessToken");
+    sessionStorage.removeItem("user");
+    dispatch({type:LOG_OUT});
+  }
+  catch(err){
+    console.log("Error signing out", err)
+  }
+}

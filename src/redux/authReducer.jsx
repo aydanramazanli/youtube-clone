@@ -9,19 +9,11 @@ import {
  } from './actionType'
 
 const state={
-    accessToken:null,
-    user:null,
+    accessToken:sessionStorage.getItem("accessToken")? sessionStorage.getItem("accessToken"):null,
+    user:sessionStorage.getItem("user")? JSON.parse(sessionStorage.getItem("user")) :null,
     loading:false
 }
 
-
-// const authReducer = createSlice({
-//     name:"authReducer",
-//     initialState: state,
-//     reducers:{
-       
-//     }
-// })
 
 export const authReducer = (prevState = state, action) => {
     const { type, payload } = action
