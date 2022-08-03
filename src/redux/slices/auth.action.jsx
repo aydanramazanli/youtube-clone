@@ -7,12 +7,15 @@ LOAD_PROFILE,
    LOGIN_SUCCESS,
    LOG_OUT,} from "../actionType";
 
+
+  //log in
 export const loginAuth = () => async (dispatch) => {
   try {
     //request
     dispatch({ type: LOGIN_REQUEST });
 
     const provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope("https://www.googleapis.com/auth/youtube.force-ssl")
 
     const result = await auth.signInWithPopup(provider);
 
@@ -36,6 +39,8 @@ export const loginAuth = () => async (dispatch) => {
   }
 };
 
+
+//log out
 export const logoutAuth=()=>async (dispatch)=>{
   try{
     await auth.signOut();

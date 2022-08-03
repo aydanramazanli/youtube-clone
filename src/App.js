@@ -8,7 +8,10 @@ import Login from "./pages/Login";
 import { Container } from "react-bootstrap";
 import "./style/_base.scss";
 import "./App.css";
+
 import { Routes, Route, useNavigate } from "react-router-dom";
+
+
 
 const Layout = ({ children }) => {
   const navigate=useNavigate()
@@ -29,10 +32,12 @@ if(!loading && !accessToken){
   return (
     <div className="app">
       <Header handleClick={handleClick} />
+     
       <div className="app__container">
         {visible ? <Sidebar /> : <SideIcons />}
         <Container fluid className="app__main ">
           {children}
+          
         </Container>
       </div>
     </div>
