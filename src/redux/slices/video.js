@@ -15,7 +15,7 @@ export const getHomeVideos = async (dispatch) => {
       params: {
         part: "snippet,contentDetails,statistics",
         chart: "mostPopular",
-        regionCode: "US",
+        regionCode: "TR",
         maxResults: 40,
       },
     });
