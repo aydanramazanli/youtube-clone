@@ -11,7 +11,7 @@ function Video({videos}) {
   const [view, setView] = useState()
   const [channelIcon, setChannelIcon]= useState()
   
-  const {etag, id, snippet:{channelId,channelTitle,defaultLanguage,publishedAt, thumbnails:{medium},title}}= videos
+  const {etag, id, snippet:{channelId,channelTitle,publishedAt, thumbnails:{medium},title}}= videos
   console.log(videos)
  
   // video details 
@@ -49,6 +49,7 @@ function Video({videos}) {
   
 const seconds= moment.duration(durations).asSeconds()
 const duration = moment.utc(seconds * 1000).format('mm:ss')
+
   return (
     <div className="video">
       <div className="video__top">
