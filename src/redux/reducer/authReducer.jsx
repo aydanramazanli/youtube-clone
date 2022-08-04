@@ -1,12 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
-
 import {
     LOAD_PROFILE,
     LOGIN_FAIL,
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOG_OUT,
- } from './actionType'
+ } from '../actionType'
 
 const state={
     accessToken:sessionStorage.getItem("accessToken")? sessionStorage.getItem("accessToken"):null,

@@ -1,32 +1,63 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./_video.scss";
 import { AiFillEye } from "react-icons/ai";
+import moment from "moment";
+import numeral from 'numeral';
+import request from '../../api'
 
-function Video() {
+
+
+function Video({videos}) {
+  const [durations,setDurations] =useState()
+  const [view, setView] = useState()
+  
+  const {etag, id, snippet:{channelId,channelIcon,channelTitle,defaultLanguage,description,publishedAt, thumbnails:{medium},title}}= videos
+  console.log(videos)
+ 
+  //details 
+  useEffect(()=>{
+    const videoDetails=async()=>{
+      const {
+        data: { items },
+     } = await request('/videos', {
+        params:{
+          part: "contentDetails, statistics",
+          id:id
+        },
+      })
+     
+    }
+    videoDetails()
+  },[id])
+
+
+  
+const seconds= moment.duration(durations).asSeconds()
+const duration = moment.utc(seconds * 1000).format('mm:ss')
   return (
     <div className="video">
       <div className="video__top">
         <img
-          src="https://i.ytimg.com/vi/WS1S8XKNCIk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBVGTPHTTAKx5-58kAxzOJF4keq8w"
-          alt=""
+          src={medium.url}
+          alt="video"
         />
-
-        <span className="video__top__duration">12:06</span>
+        <span className="video__top__duration">{duration}</span>
       </div>
       <div className="video__channel">
         <img
-          src="https://yt3.ggpht.com/ytc/AMLnZu8VcQgI4mTUuYB6idER20SqI4vJU4Hq0RnmCLC1QA=s68-c-k-c0x00ffffff-no-rj"
+          src={channelIcon?.url}
           alt=""
         />
         <div>
-        <p>Guardians Of The Galaxy 3 Trailer </p>
-        <div className="video__title">Emergency Awesome</div>
+      
+        <div className="video__title">{title.length >= 25 ? title.slice(0, 20) + "..." : title}</div>
+        <p className="channelTitle">{channelTitle.length >= 25 ? title.slice(0, 25) + "..." :channelTitle}</p>
       <div className="video__details">
         <span>
-          <AiFillEye /> 20k Views
+          <AiFillEye />{numeral(view).format('0.a')} Views
         </span>
         <span>•</span>
-        <span>3 days ago </span>
+        <span>{moment(publishedAt).fromNow()} </span>
       </div>
         </div>
        

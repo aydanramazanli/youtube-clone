@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
-import { loginAuth } from '../redux/slices/auth.action'
+import { loginAuth } from '../redux/slices/auth'
 import './_login.scss'
 import logo from '../images/youtube-logo-png-31812.png'
 

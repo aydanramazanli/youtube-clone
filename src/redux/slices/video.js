@@ -1,27 +1,38 @@
-import { HOME_VIDEOS_REQUEST } from "../actionType";
+import {
+  HOME_VIDEOS_REQUEST,
+  HOME_VIDEOS_SUCCESS,
+  HOME_VIDEOS_FAIL,
+} from "../actionType";
 import req from "../../api";
 
 
- const baseUrl='https://youtube.googleapis.com/youtube/v3'
+const baseUrl = "https://youtube.googleapis.com/youtube/v3";
 
-export const getHomeVideos = async(dispatch)  => {
+export const getHomeVideos = async (dispatch) => {
   try {
     dispatch({ type: HOME_VIDEOS_REQUEST });
-    const request =await  req(`${baseUrl}/videos`, {
+    const { data } = await req(`${baseUrl}/videos`, {
       params: {
-        part: 'snippet,contentDetails,statistics',
-        chart: 'mostPopular',
-        regionCode: 'US',
-        maxResults: 20,
-     
+        part: "snippet,contentDetails,statistics",
+        chart: "mostPopular",
+        regionCode: "US",
+        maxResults: 40,
       },
     });
- console.log(request)
+
+    dispatch({
+      type: HOME_VIDEOS_SUCCESS,
+      payload: {
+        videos: data.items,
+        nextPageToken: data.nextPageToken,
+      },
+    });
+
+   
   } catch (err) {
- 
+     console.log(err);
+    dispatch({ type: HOME_VIDEOS_FAIL, payload: err.message });
   }
-}
- 
+};
 
-
-getHomeVideos ()
+getHomeVideos();

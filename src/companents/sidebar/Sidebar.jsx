@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import "./_sidebar.scss";
-import {logoutAuth} from '../../redux/slices/auth.action'
+import {logoutAuth} from '../../redux/slices/auth'
 import {
     MdSubscriptions,
     MdExitToApp,

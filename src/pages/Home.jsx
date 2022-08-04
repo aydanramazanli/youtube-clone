@@ -3,12 +3,14 @@ import Video from "../companents/video/Video";
 import Category from "../companents/category/Category";
 import uniqid from "uniqid";
 import { Container, Row, Col } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getHomeVideos } from "../redux/slices/video";
 
 function Home() {
   const dispatch = useDispatch();
-  // console.log(getHomeVideos());
+
+const {videos, loading}= useSelector(state=>state.videos)
+
   useEffect(() => {
     dispatch(getHomeVideos);
   }, [dispatch]);
@@ -17,9 +19,9 @@ function Home() {
       <Container>
         <Category />
         <Row style={{ background: "#000", paddingTop: "0.5rem" }}>
-          {[...new Array(20)].map(() => (
+          {videos.map((el) => (
             <Col key={uniqid()} lg={3} md={4}>
-              <Video />
+              <Video videos={el} key={videos.id} />
             </Col>
           ))}
         </Row>

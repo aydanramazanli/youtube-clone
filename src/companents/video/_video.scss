@@ -27,11 +27,9 @@
   }
 
   &__title {
-    margin: 0.4rem 0 0 0;
-    color: rgba(255, 255, 255, 0.637);
-    font-weight: 400;
-    letter-spacing: -1px;
+    margin:0 0.3rem ;
   }
+
 
   &__details {
     display: flex;
@@ -40,9 +38,7 @@
     font-weight: 400;
     letter-spacing: -1px;
 
-    :nth-child(2){
-      margin:0 0.3rem ;
-    }
+    
   }
   &__channel {
     display: flex;
@@ -55,7 +51,10 @@
       cursor: pointer;
     }
     p {
-      margin-bottom: 0;
+      margin: 0;
+    color: rgba(255, 255, 255, 0.637);
+    font-weight: 400;
+    letter-spacing: -1px;
     }
   }
 }
