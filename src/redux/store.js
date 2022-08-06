@@ -5,9 +5,9 @@ import { videosReducer } from './reducer/videosReducer';
 
 const store = configureStore({
     reducer:{
-       auth:authReducer,
-       videos:videosReducer
+        auth:authReducer,
+        videos:videosReducer
     }
-})
+});
 
-export default store
+export default store;
