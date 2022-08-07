@@ -23,18 +23,12 @@
     ],
     "rules": {
         "react/prop-types": "off",
-
         "react/react-in-jsx-scope":"off",
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
+        "indent": "off",
+        "linebreak-style": 0,
+        
         "quotes": [
-            "error",
+            2,
             "single"
         ],
         "semi": [
