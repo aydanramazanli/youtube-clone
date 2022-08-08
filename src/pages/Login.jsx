@@ -1,23 +1,23 @@
-import React, { useEffect } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
-import {useNavigate} from 'react-router-dom'
-import { loginAuth } from '../redux/slices/auth'
-import './_login.scss'
-import logo from '../images/youtube-logo-png-31812.png'
+import React, { useEffect } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import { loginAuth } from '../redux/slices/auth';
+import './_login.scss';
+import logo from '../images/youtube-logo-png-31812.png';
 
 export default function Login() {
-const dispatch=useDispatch()
-const navigate = useNavigate()
-const accessToken= useSelector(state=>state.auth.accessToken)
+const dispatch=useDispatch();
+const navigate = useNavigate();
+const accessToken= useSelector(state=>state.auth.accessToken);
  useEffect(()=>{
    if(accessToken){
-      navigate("/")
+      navigate("/");
    }
- })
+ });
 
 const handleClick=()=>{
-   dispatch(loginAuth())
-}
+   dispatch(loginAuth());
+};
 
 
 
@@ -33,5 +33,5 @@ const handleClick=()=>{
        <p>This Project is made using YOUTUBE DATA API</p>
     </div>
  </div>
-  )
+  );
 }

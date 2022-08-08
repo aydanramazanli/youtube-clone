@@ -2,15 +2,15 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "jest":true
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-  "settings": {
-    "version": "lastest"
-  },
+    "settings": {
+        "version": "lastest"
+    },
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -23,14 +23,13 @@
     ],
     "rules": {
         "react/prop-types": "off",
-        "react/react-in-jsx-scope":"off",
+        "react/react-in-jsx-scope": "off",
         "indent": "off",
         "linebreak-style": 0,
-        
-        "quotes": [
-            2,
-            "single"
-        ],
+
+        "quotes": 0,
+
+
         "semi": [
             "error",
             "always"

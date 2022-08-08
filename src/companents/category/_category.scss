@@ -1,36 +1,39 @@
-@import '../../style/base.scss';
-
+@import "../../style/base.scss";
 
 .categories {
-    padding: 0.5rem 0;
-    font-size: 0.8rem;
-    display: flex;
-    overflow-x: scroll;
- 
-    &::-webkit-scrollbar {
-       width: 0px;
+  border-top: solid 1px rgba(128, 128, 128, 0.342);
+  border-bottom: solid 1px rgba(128, 128, 128, 0.342);
+  padding-bottom: 0!important;
+  padding: 0.8rem 0;
+  font-size: 0.8rem;
+  display: flex;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  scrollbar-width: none;
+
+  span {
+    margin-right: 1rem;
+    padding: 0.3rem 0.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border: 1.5px solid rgba(128, 128, 128, 0.562);
+    transition: all 0.3s;
+    border-radius: 999px;
+    cursor: pointer;
+    background-color: #6d6d6d5d;
+
+    &:hover {
+      background-color: #555555dc;
     }
-    scrollbar-width: none;
- 
-    span {
-       margin-right: 1rem;
-       padding: 0.5rem 1rem;
-       font-weight: 500;
-       white-space: nowrap;
-       border: 1.5px solid $text-color;
-       transition: all 0.3s;
-       border-radius: 999px;
-       cursor: pointer;
-       background-color: #5555555d;
- 
-       &:hover {
-          background-color: #555555dc;
-       }
- 
-       &.active {
-          color: #fff;
-          background-color: #817f7f;
-          border-color: $border-color;
-       }
+
+    &.active {
+      color: black;
+      background-color: white;
+   font-weight: 400;
+   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     }
- }
+  }
+}

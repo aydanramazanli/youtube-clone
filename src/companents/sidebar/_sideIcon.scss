@@ -1,10 +1,12 @@
 @import '../../style/base.scss';
 
 .iconBar{
+   position: sticky;
+
    display: flex;
    flex-direction: column;
    width: 70px;
-   padding-top: 2rem;
+   padding-top: 1rem;
    .iconList {
       display: flex;
       flex-direction: column;
@@ -42,10 +44,4 @@
       
     }
  }
-//  @media (max-width: $breakpoint-small) {
-//     .sideIcon {
-    
-//        position: fixed;
-//        z-index: 999;
-//     }
-//   }
+

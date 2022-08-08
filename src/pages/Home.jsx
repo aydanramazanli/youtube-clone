@@ -1,15 +1,21 @@
-import React, { useEffect } from "react";
-import Video from "../companents/video/Video";
-import Category from "../companents/category/Category";
-import uniqid from "uniqid";
-import { Container, Row, Col } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { getHomeVideos } from "../redux/slices/video";
+import React, { useEffect } from 'react';
+import Video from '../companents/video/Video';
+import Category from '../companents/category/Category';
+import uniqid from 'uniqid';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHomeVideos } from '../redux/slices/video';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 
 function Home() {
   const dispatch = useDispatch();
 
-const {videos, loading}= useSelector(state=>state.videos)
+
+  const { videos } = useSelector((state) => state.videos);
+  const fetchData = () => {
+    dispatch(getHomeVideos());
+  };
 
   useEffect(() => {
     dispatch(getHomeVideos);
@@ -18,13 +24,22 @@ const {videos, loading}= useSelector(state=>state.videos)
     <>
       <Container>
         <Category />
-        <Row style={{ background: "#000", paddingTop: "0.5rem" }}>
-          {videos.map((el) => (
-            <Col key={uniqid()} lg={3} md={4}>
-              <Video videos={el} key={videos.id} />
-            </Col>
-          ))}
-        </Row>
+        <InfiniteScroll
+          dataLength={videos.length} 
+          next={fetchData}
+          hasMore={true}
+          loader={
+            <div className="mx-auto text-danger text-center  d-block">loadinnnggg</div>
+          }
+        >
+          <Row style={{ background: '#000', paddingTop: '0.5rem' }}>
+            {videos.map((el) => (
+              <Col key={uniqid()} lg={3} md={4}>
+                <Video videos={el} key={videos.id} />
+              </Col>
+            ))}
+          </Row>
+        </InfiniteScroll>
       </Container>
     </>
   );

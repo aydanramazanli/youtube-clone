@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import "./_sidebar.scss";
-import {logoutAuth} from '../../redux/slices/auth'
+import {logoutAuth} from '../../redux/slices/auth';
 import {
     MdSubscriptions,
     MdExitToApp,
@@ -10,7 +10,7 @@ import {
     MdLibraryBooks,
     MdHome,
     MdSentimentDissatisfied,
- } from "react-icons/md"
+ } from "react-icons/md";
 
 
 
@@ -18,10 +18,10 @@ import {
 
 
 function Sidebar() {
-   const dispatch = useDispatch()
+   const dispatch = useDispatch();
    const handleLogOut=()=>{
-      dispatch(logoutAuth())
-   }
+      dispatch(logoutAuth());
+   };
   return (
     <nav className="sidebar">
         <li className="list">
@@ -61,7 +61,7 @@ function Sidebar() {
 
          <hr />
     </nav>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

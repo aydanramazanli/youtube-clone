@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import { Container } from 'react-bootstrap';
 import './style/_base.scss';
-import './App.css';
+import './_app.scss';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 

@@ -6,7 +6,7 @@ import {
     MdHistory,
     MdLibraryBooks,
     MdHome,
- } from "react-icons/md"
+ } from "react-icons/md";
 
 function SideIcons() {
   return (
@@ -36,7 +36,7 @@ function SideIcons() {
      </li>
      <hr />
 </nav>
-  )
+  );
 }
 
-export default SideIcons
+export default SideIcons;

@@ -3,12 +3,13 @@
 
 
 .sidebar{
-  
+  position: sticky;
+
    display: flex;
    flex-direction: column;
    width: 250px;
    height: 90vh;
-   padding-top: 2rem;
+   padding-top: 1rem;
    .list {
       display: flex;
       align-items: center;
@@ -48,8 +49,6 @@ list-style: none;
     .sidebar {
      display:none;
       
-      // li> span{
-      //    font-size:8px;
-      //  }
+     
     }
  }

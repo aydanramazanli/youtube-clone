@@ -11,8 +11,7 @@ function Video({videos}) {
     const [view, setView] = useState();
     const [channelIcon, setChannelIcon]= useState();
   
-    const { id, snippet:{channelId,channelTitle,publishedAt, thumbnails:{medium},title}}= videos;
-
+    const { id, snippet:{channelId,channelTitle,publishedAt, thumbnails:{medium},title}}= videos; 
  
     // video details 
     useEffect(()=>{
