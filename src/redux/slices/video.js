@@ -15,7 +15,7 @@ export const getHomeVideos = async (dispatch) => {
 				part: 'snippet,contentDetails,statistics',
 				chart: 'mostPopular',
 				regionCode: 'TR',
-				maxResults: 40,
+				maxResults: 10,
 				// pageToken: getState().homeVideos.nextPageToken,
 			},
 		});

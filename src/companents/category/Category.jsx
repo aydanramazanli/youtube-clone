@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './_category.scss';
 import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid';
-import { getCategories } from '../../redux/slices/video';
+import { getCategories, getHomeVideos } from '../../redux/slices/video';
 
 const keywords = [
 	'All',
@@ -28,6 +28,11 @@ function Category() {
 
 	const handleClick = (value) => {
 		dispatch(getCategories(value));
+		if(value==="All"){
+			dispatch(getHomeVideos());
+		}else{
+			dispatch(getHomeVideos(value));
+		}
 		setActive(value);
 	};
 
