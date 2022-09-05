@@ -3,7 +3,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import { loginAuth } from '../redux/slices/auth';
 import './_login.scss';
-import logo from '../images/youtube-logo-png-31812.png';
+import logo from '../images/logo.png';
 
 export default function Login() {
 const dispatch=useDispatch();

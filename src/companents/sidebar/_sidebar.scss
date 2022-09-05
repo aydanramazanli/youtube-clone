@@ -1,54 +1,48 @@
-@import '../../style/base.scss';
+@import "../../style/base.scss";
 
+.sidebar {
+   background:#080808f8;
+   z-index: 100;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 90vh;
+  padding-top: 1rem;
+  .list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0.6rem 1.5rem;
+    margin: 0.1rem 0;
+    cursor: pointer;
 
-
-.sidebar{
-  position: sticky;
-
-   display: flex;
-   flex-direction: column;
-   width: 250px;
-   height: 90vh;
-   padding-top: 1rem;
-   .list {
-      display: flex;
-      align-items: center;
-list-style: none;
-      padding: 0.6rem 1.5rem;
-      margin: 0.1rem 0;
-      cursor: pointer;
-
-      span {
-         margin-left: 1rem;
-         font-size: 16px;
-         font-weight: 500;
-         letter-spacing: 0.4px;
-      }
-
-      &:hover {
-         background-color: $border-color;
-      }
-   }
-    hr {
-       background-color: $border-color;
+    span {
+      margin-left: 1rem;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
     }
 
-  
- }
+    &:hover {
+      background-color: $border-color;
+    }
+  }
+  hr {
+    background-color: $border-color;
+  }
+}
 
- @media (max-width: $breakpoint-medium) {
-    .sidebar {
-       width: 90px;
-       li {
-          justify-content: center;
-       }
-     
+@media (max-width: $breakpoint-medium) {
+  .sidebar {
+    width: 90px;
+    li {
+      justify-content: center;
     }
- }
- @media (max-width: $breakpoint-small) {
-    .sidebar {
-     display:none;
-      
-     
-    }
- }
+  }
+}
+@media (max-width: $breakpoint-small) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+
+.singleComment{
+    font-size: 0.9rem;
+   // border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
+    img {
+       width: 50px;
+       height: 50px;
+       object-fit: cover;
+       border-radius: 50%;
+    }
+    &__header {
+       color: #fff;
+       font-weight: bold;
+       margin-bottom: 0.5rem;
+       span{
+         color:gray;
+       }
+    }
+    &__body {
+       overflow: hidden;
+       font-weight: bold;
+       margin-left: 1rem;
+
+    }
+ }

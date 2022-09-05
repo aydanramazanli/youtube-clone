@@ -1,47 +1,44 @@
-@import '../../style/base.scss';
+@import "../../style/base.scss";
 
-.iconBar{
-   position: sticky;
-
-   display: flex;
-   flex-direction: column;
-   width: 70px;
-   padding-top: 1rem;
-   .iconList {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      list-style: none;
-      padding: 0.6rem 0.5rem;
-     
-      cursor: pointer;
-
-      h3 {
-       text-align: center;
-         font-size: 10px;
-         font-weight: 400;
-
-      }
-
-      &:hover {
-         background-color: $border-color;
-      }
-   }
-    hr {
-       background-color: $border-color;
+.iconBar {
+  position: sticky;
+  display: none;
+  flex-direction: column;
+  width: 70px;
+  height: 90vh;
+  padding-top: 1rem;
+  .iconList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0.6rem 0.5rem;
+    cursor: pointer;
+    h3 {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 400;
     }
-
-  
- }
-
- @media (max-width: $breakpoint-medium) {
-    .sideIcon {
-       width: 90px;
-   
-       li {
-          justify-content: center;
-       }
-      
+    &:hover {
+      background-color: $border-color;
     }
- }
+  }
+  hr {
+    background-color: $border-color;
+  }
+}
 
+@media (max-width: $breakpoint-medium) {
+  .sideIcon {
+   display:none;
+    width: 90px;
+
+    li {
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: $breakpoint-small) {
+   .iconBar{display: block}
+ }
+ 
