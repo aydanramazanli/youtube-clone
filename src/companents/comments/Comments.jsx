@@ -1,6 +1,6 @@
 import "./_comments.scss";
 import Comment from "../Comment/Comment";
-
+import shortid from "shortid";
 const Comments = () => {
   const handleComment = (e) => {
    e.preventDefault();
@@ -19,8 +19,8 @@ const Comments = () => {
       </div>
       <div className="p-2 comments d-flex w-100">
         <div className="comment_list w-100">
-          {[...Array(15)].map((id) => (
-            <Comment key={id} />
+          {[...Array(15)].map(() => (
+            <Comment key={shortid()} />
           ))}
         </div>
       </div>

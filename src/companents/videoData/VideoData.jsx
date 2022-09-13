@@ -1,19 +1,26 @@
 import { useState } from "react";
 import "./_videoData.scss";
 import numeral from "numeral";
+import moment from "moment";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 
-function videoData() {
+function videoData({ video: { snippet, statistics } }) {
   const [readMore, setReadMore] = useState(false);
+  const {channelTitle,description,publishedAt, title}= snippet;
+  const {likeCount, viewCount} = statistics;
   return (
     <div className="videoData ">
       <div className="videoData__top py-2">
-        <h4>Title</h4>
+        <h4>{title}</h4>
         <div className="d-flex justify-content-between align-items-center py-1">
-          <span>{numeral(10000).format("0.a")} view</span>
+          <div>
+          <span style={{marginRight:"10px"}}>{numeral(viewCount).format("0.a")} view</span>
+          <span >{moment(publishedAt).fromNow()}</span>
+          </div>
+         
           <div>
             <span className="likeIcons">
-              <MdThumbUp size={26} /> {numeral(10000).format("0.a")}
+              <MdThumbUp size={26} /> {numeral(likeCount).format("0.a")}
             </span>
             <span className="likeIcons">
               <MdThumbDown size={26} /> {numeral(10000).format("0.a")}
@@ -29,9 +36,8 @@ function videoData() {
             className="mr-3 rounded-circle"
           />
           <div className="subscribes">
-
-            <span>titles</span>
-            <span style={{ color: "gray"}}>
+            <span>{channelTitle}</span>
+            <span style={{ color: "gray" }}>
               {numeral(1000).format("0.a")} Subscribers
             </span>
           </div>
@@ -48,10 +54,7 @@ function videoData() {
         </h4>
         {readMore && (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-            consectetur neque ab porro quasi culpa nulla rerum quis minus
-            voluptatibus sed hic ad quo sint, libero commodi officia aliquam!
-            Maxime.
+          {description}
           </p>
         )}
       </div>

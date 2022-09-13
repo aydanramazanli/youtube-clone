@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHomeVideos } from '../redux/slices/video';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import PuffLoader from 'react-spinners/PuffLoader';
+//import PuffLoader from 'react-spinners/PuffLoader';
 import SkeletonVideo from '../companents/skeletons/skeletonVideo';
 
 function Home() {
@@ -29,17 +29,17 @@ function Home() {
   }, [dispatch]);
   return (
     <>
-      <Container>
+      <Container style={{marginRight:"0"}}>
         <Category />
         <InfiniteScroll
           dataLength={videos.length}
           next={fetchData}
           hasMore={true}
-          loader={
-            <div className="flex-grow-1 d-flex align-items-center text-danger justify-content-center">
-              <PuffLoader color={'red'} />
-            </div>
-          }
+          // loader={
+          //   <div className="flex-grow-1 d-flex align-items-center text-danger justify-content-center">
+          //     <PuffLoader color={'red'} />
+          //   </div>
+          // }
         >
           <Row style={{ background: '#000', paddingTop: '0.5rem', width: '100%' , margin:0}}>
             {!loading

@@ -1,13 +1,13 @@
 @import "../../style/base.scss";
 
 .sidebar {
-   background:#080808f8;
+ background:black;
    z-index: 100;
   position: fixed;
   display: flex;
   flex-direction: column;
-  width: 250px;
-  height: 90vh;
+  width: 225px;
+  height: 100vh;
   padding-top: 1rem;
   .list {
     display: flex;
@@ -16,15 +16,17 @@
     padding: 0.6rem 1.5rem;
     margin: 0.1rem 0;
     cursor: pointer;
+    color:$white;
 
     span {
       margin-left: 1rem;
       font-size: 16px;
       font-weight: 400;
       letter-spacing: 0.4px;
+  
     }
 
-    &:hover {
+    &:not(:first-child):hover  {
       background-color: $border-color;
     }
   }

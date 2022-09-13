@@ -11,9 +11,11 @@ import "./_app.scss";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import WatchScreen from "./pages/WatchScreen/WatchScreen";
 
+
 const Layout = ({ children }) => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(true);
+
 
   const handleClick = () => {
     setVisible(!visible);
@@ -32,7 +34,7 @@ const Layout = ({ children }) => {
       <Header handleClick={handleClick} />
 
       <div className="app__container">
-        {visible ? <Sidebar /> : <SideIcons />}
+        {visible ? <Sidebar handleClick={handleClick} /> : <SideIcons />}
         <Container fluid className="app__main ">
           {children}
         </Container>
