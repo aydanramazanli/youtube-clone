@@ -1,6 +1,9 @@
 @import '../../style/base.scss';
 
 .header {
+   padding: 2rem 1.5rem;
+   z-index: 1000;
+   background:$black-secondary;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -9,8 +12,6 @@
    top:0;
    height: 10vh;
    width: 100%;
-   // // z-index: 9;
-   // background:$black-secondary;
    &__menu {
       color:$white;
    }

@@ -8,7 +8,7 @@ import logo from '../images/logo.png';
 export default function Login() {
 const dispatch=useDispatch();
 const navigate = useNavigate();
-const accessToken= useSelector(state=>state.auth.accessToken);
+const accessToken = useSelector(state=>state.auth.accessToken);
  useEffect(()=>{
    if(accessToken){
       navigate("/");

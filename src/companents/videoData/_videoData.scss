@@ -11,8 +11,8 @@
 
   &__channel {
     border: 0.1px solid rgba(255, 255, 255, 0.1);
-    padding:0.5rem;
-  
+    padding: 0.5rem;
+
     img {
       width: 50px;
       height: 50px;
@@ -25,12 +25,16 @@
     }
 
     button {
-      background-color: red;
       color: #fff;
       border-radius: 0;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-
+      &.btn-gray {
+        background-color: gray;
+      }
+      &.btn-red {
+        background-color: red;
+      }
       &:hover {
         color: #fff;
       }
@@ -43,7 +47,7 @@
   &__description {
     font-size: 0.9rem;
     white-space: pre-line;
-    border-bottom:0.1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
 
     h4 {
       cursor: pointer;
