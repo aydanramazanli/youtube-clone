@@ -53,6 +53,8 @@ function Video({videos}) {
     const handleVideoClick=()=>{
       navigate(`/watch/${videoId}`);
     };
+
+    
     const seconds= moment.duration(durations).asSeconds();
     const duration = moment.utc(seconds * 1000).format('mm:ss');
 

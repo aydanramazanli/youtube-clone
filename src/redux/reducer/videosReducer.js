@@ -5,6 +5,9 @@ import {
   SELECTED_VIDEOS_REQUEST,
   SELECTED_VIDEOS_SUCCESS,
   SELECTED_VIDEOS_FAIL,
+  RELATED_VIDEOS_REQUEST,
+  RELATED_VIDEOS_SUCCESS,
+  RELATED_VIDEOS_FAIL
 } from "../actionType";
 
 export const videosReducer = (
@@ -46,7 +49,7 @@ export const videosReducer = (
       return state;
   }
 };
-
+// selected video
 export const selectedVideoReducer = (
   state = { loading: true, video: null },
   action
@@ -68,6 +71,35 @@ export const selectedVideoReducer = (
       return {
         ...state,
         video: null,
+        loading: false,
+        error: payload,
+      };
+    default:
+      return state;
+  }
+};
+
+// related video
+export const relatedVideoReducer = (
+  state = { loading: true, videos: [] },
+  action
+) => {
+  const { payload, type } = action;
+  switch (type) {
+    case  RELATED_VIDEOS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case  RELATED_VIDEOS_SUCCESS:
+      return {
+        ...state,
+        videos: payload,
+        loading: false,
+      };
+    case  RELATED_VIDEOS_FAIL:
+      return {
+        ...state,
         loading: false,
         error: payload,
       };

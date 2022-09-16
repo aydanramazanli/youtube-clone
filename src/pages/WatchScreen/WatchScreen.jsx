@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import "./_watchScreen.scss";
-import shortid from "shortid";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Comments from "../../companents/comments/Comments";
 import VideoHorizontal from "../../companents/videoHorizontal/VideoHorizontal";
 import VideoData from "../../companents/videoData/VideoData";
-import { getVideoById } from "../../redux/slices/video";
+import { getVideoById, relatedVideos } from "../../redux/slices/video";
 
 const WatchScreen = () => {
   const dispatch = useDispatch();
@@ -15,15 +14,17 @@ const WatchScreen = () => {
 
   useEffect(() => {
     dispatch(getVideoById(id));
+    dispatch(relatedVideos(id));
   }, [dispatch, id]);
 
   const { video, loading } = useSelector((state) => state.selectedVideos);
-
-
+  const { videos, loading:relatedVideosLoading } = useSelector(
+    (state) => state.relatedVideos
+  );
 
   return (
     <Row style={{ padding: "1.5rem" }}>
-      <Col lg={8} style={{ padding: 0}}>
+      <Col lg={8} style={{ padding: 0 }}>
         <div className="watchScreen__player">
           <iframe
             src={`https://www.youtube.com/embed/${id}`}
@@ -41,11 +42,14 @@ const WatchScreen = () => {
           <h3>Loading...</h3>
         )}
 
-        <Comments  videoId={id}  totalComments ={video?.statistics?.commentCount}/>
+        <Comments
+          videoId={id}
+          totalComments={video?.statistics?.commentCount}
+        />
       </Col>
       <Col lg={4}>
-        {[...Array(10)].map(() => (
-          <VideoHorizontal key={shortid()} />
+        {!relatedVideosLoading && videos?.map((video) => (
+          <VideoHorizontal video={video} key={video.id.videoId} />
         ))}
       </Col>
     </Row>
