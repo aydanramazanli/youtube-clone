@@ -19,7 +19,6 @@ export const getHomeVideos = async (dispatch) => {
         chart: "mostPopular",
         regionCode: "TR",
         maxResults: 10,
-        // pageToken: getState().homeVideos.nextPageToken,
       },
     });
 
@@ -45,7 +44,6 @@ export const getCategories = (keyword) => async (dispatch) => {
       params: {
         part: "snippet",
         maxResults: 40,
-        //pageToken: getState().homeVideos.nextPageToken,
         q: keyword,
         type: "video",
       },

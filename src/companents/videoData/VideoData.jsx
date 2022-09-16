@@ -3,7 +3,6 @@ import "./_videoData.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getChannelDetails,
-  checkSubscriptionStatus,
 } from "../../redux/slices/channel";
 import numeral from "numeral";
 import moment from "moment";
@@ -11,20 +10,20 @@ import { MdThumbUp, MdThumbDown } from "react-icons/md";
 
 function videoData({ video: { snippet, statistics } }) {
   const [readMore, setReadMore] = useState(false);
+  const [subscribes, setSubscribes] = useState(false);
   const { channelId, channelTitle, description, publishedAt, title } = snippet;
   const { likeCount, viewCount } = statistics;
+
+
+
 
   const dispatch = useDispatch();
   const { snippet: channelSnippet, statistics: channelStatistics } =
     useSelector((state) => state.channelDetails.channel);
 
-  const subscriptionStatus = useSelector(
-    (state) => state.channelDetails.subscriptionStatus
-  );
 
   useEffect(() => {
     dispatch(getChannelDetails(channelId));
-    dispatch(checkSubscriptionStatus(channelId));
   }, [dispatch, channelId]);
 
   return (
@@ -53,7 +52,6 @@ function videoData({ video: { snippet, statistics } }) {
         <div className="d-flex align-items-center">
           <img
             src={channelSnippet?.thumbnails?.default?.url}
-            // src="https://i.pinimg.com/736x/65/79/aa/6579aaaedde20287d08c896dbc8a2969.jpg"
             alt="video"
             className="mr-3 rounded-circle"
           />
@@ -65,7 +63,7 @@ function videoData({ video: { snippet, statistics } }) {
             </span>
           </div>
         </div>
-        <button className={`p-2 m-2 border-0 ${subscriptionStatus? 'btn-gray' : 'btn-red'}`}>{subscriptionStatus? 'subscribed' : 'suBscribe'}</button>
+        <button onClick={()=>setSubscribes(!subscribes)} className={`p-2 m-2 border-0 ${subscribes? 'btn-gray' : 'btn-red'}`}>{subscribes? 'subscribed' : 'suBscribe'}</button>
       </div>
       <div className="videoData__description">
         <h4

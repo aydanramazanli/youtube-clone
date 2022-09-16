@@ -1,27 +1,6 @@
 .comments__form {
     width: 100%;
-    form{
-        width: 100%;
-        input {
-            width: 85%;
-            background: transparent;
-            border: none;
-            border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            &:focus {
-               outline: none;
-            }
-    }
-   
-    }
- 
-  form  button {
-       background-color: transparent;
-       color: #fff;
-       letter-spacing: 0.5px;
-       &:focus {
-          border: none;
-          outline: none;
-       }
-    }
+  span{
+   font-weight: 600;
+  }
  }

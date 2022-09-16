@@ -1,26 +1,31 @@
 import "./_comments.scss";
-import Comment from "../Comment/Comment";
+import Comment from "../comment/Comment";
 import shortid from "shortid";
-const Comments = () => {
-  const handleComment = (e) => {
-   e.preventDefault();
-  };
+import { useDispatch, useSelector } from "react-redux";
+import { getCommentList } from "../../redux/slices/comment";
+import { useEffect } from "react";
+
+const Comments = ({ videoId, totalComments }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCommentList(videoId));
+  }, [dispatch, videoId]);
+
+  const videoComments = useSelector((state) => state.commentList.comments);
+  const listComment = videoComments?.map(
+    (comment) => comment.snippet.topLevelComment.snippet
+  );
+
   return (
     <>
       <div className="comments__form d-flex my-2">
-        <form action="" onSubmit={handleComment}>
-          <input
-            type="text"
-            className="flex-grow-1"
-            placeholder="write a comment..."
-          />
-          <button className="border-0 p-2">comment</button>
-        </form>
+        <span>{totalComments} Comments</span>
       </div>
       <div className="p-2 comments d-flex w-100">
         <div className="comment_list w-100">
-          {[...Array(15)].map(() => (
-            <Comment key={shortid()} />
+          {listComment?.map((singleComment) => (
+            <Comment singleComment={singleComment} key={shortid()} />
           ))}
         </div>
       </div>
