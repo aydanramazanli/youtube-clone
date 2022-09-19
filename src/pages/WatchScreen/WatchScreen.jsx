@@ -7,6 +7,7 @@ import Comments from "../../companents/comments/Comments";
 import VideoHorizontal from "../../companents/videoHorizontal/VideoHorizontal";
 import VideoData from "../../companents/videoData/VideoData";
 import { getVideoById, relatedVideos } from "../../redux/slices/video";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const WatchScreen = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const WatchScreen = () => {
   }, [dispatch, id]);
 
   const { video, loading } = useSelector((state) => state.selectedVideos);
-  const { videos, loading:relatedVideosLoading } = useSelector(
+  const { videos, loading: relatedVideosLoading } = useSelector(
     (state) => state.relatedVideos
   );
 
@@ -48,9 +49,15 @@ const WatchScreen = () => {
         />
       </Col>
       <Col lg={4}>
-        {!relatedVideosLoading && videos?.map((video) => (
-          <VideoHorizontal video={video} key={video.id.videoId} />
-        ))}
+        {!relatedVideosLoading ? (
+          videos?.map((video) => (
+            <VideoHorizontal video={video} key={video.id.videoId} />
+          ))
+        ) : (
+          <SkeletonTheme baseColor="#fff" highlightColor="#3c4147">
+            <Skeleton width='100%' height='130' count={15}/>
+          </SkeletonTheme>
+        )}
       </Col>
     </Row>
   );

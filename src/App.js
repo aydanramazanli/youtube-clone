@@ -5,11 +5,12 @@ import SideIcons from "./companents/sidebar/SideIcons";
 import Header from "./companents/header/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import SearchScreen from "./pages/searchScreen/SearchScreen";
 import { Container } from "react-bootstrap";
 import "./style/_base.scss";
 import "./_app.scss";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import WatchScreen from "./pages/WatchScreen/WatchScreen";
+import WatchScreen from "./pages/watchScreen/WatchScreen";
 
 
 const Layout = ({ children }) => {
@@ -63,10 +64,10 @@ const App = () => {
             </Layout>} />
 
         <Route
-          path="/search"
+          path="/search/:query"
           element={
             <Layout>
-              <h1>Search Results</h1>
+              <SearchScreen />
             </Layout>
           }
         ></Route>

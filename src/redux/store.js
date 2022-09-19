@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authReducer } from "./reducer/authReducer";
-import { videosReducer ,  selectedVideoReducer,relatedVideoReducer} from "./reducer/videosReducer";
+import { videosReducer , selectedVideoReducer,relatedVideoReducer, searchedVideoReducer, } from "./reducer/videosReducer";
 import {channelDeatilReducer} from './reducer/channelReducer';
 import {commentReducer} from './reducer/commentReducer';
 
@@ -12,7 +12,8 @@ const store = configureStore({
     selectedVideos: selectedVideoReducer,
     channelDetails:channelDeatilReducer,
     commentList:commentReducer,
-    relatedVideos:relatedVideoReducer
+    relatedVideos:relatedVideoReducer,
+    searchedVideo:searchedVideoReducer
   },
 });
 

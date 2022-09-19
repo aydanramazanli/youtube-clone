@@ -7,7 +7,10 @@ import {
   SELECTED_VIDEOS_FAIL,
   RELATED_VIDEOS_REQUEST,
   RELATED_VIDEOS_SUCCESS,
-  RELATED_VIDEOS_FAIL
+  RELATED_VIDEOS_FAIL,
+  SEARCHED_VIDEOS_REQUEST,
+  SEARCHED_VIDEOS_SUCCESS,
+  SEARCHED_VIDEOS_FAIL
 } from "../actionType";
 import req from "../../api";
 
@@ -46,7 +49,7 @@ export const getCategories = (keyword) => async (dispatch) => {
     const { data } = await req(`${baseUrl}/search`, {
       params: {
         part: "snippet",
-        maxResults: 40,
+        maxResults: 20,
         q: keyword,
         type: "video",
       },
@@ -85,7 +88,6 @@ export const getVideoById = (id) => async (dispatch) => {
 };
 
 //related videos
-
 export const relatedVideos = (id) => async (dispatch) => {
   try {
     dispatch({ type: RELATED_VIDEOS_REQUEST });
@@ -103,5 +105,29 @@ export const relatedVideos = (id) => async (dispatch) => {
   } catch (err) {
     console.log(err.response.data.message);
     dispatch({ type: RELATED_VIDEOS_FAIL, payload: err.response.data.message});
+  }
+};
+
+//categories
+export const getSearchingVideos = (keyword) => async (dispatch) => {
+  try {
+    dispatch({ type: SEARCHED_VIDEOS_REQUEST });
+    const { data } = await req(`${baseUrl}/search`, {
+      params: {
+        part: "snippet",
+        maxResults: 20,
+        q: keyword,
+        type: "video,channel",
+      },
+    });
+
+    dispatch({
+      type: SEARCHED_VIDEOS_SUCCESS,
+      payload:  data.items
+      ,
+    });
+  } catch (err) {
+    console.log(err);
+    dispatch({ type: SEARCHED_VIDEOS_FAIL, payload: err.message });
   }
 };

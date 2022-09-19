@@ -77,7 +77,7 @@ export default function VideoHorizontal({ video }) {
         <p className=" videoHorizontal__title">{title}</p>
         <div className="videoHorizontal__channel d-flex align-items-center">
           {/* <LazyLoadImage
-          src={channelIcon.url}
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWy4mGn2H4biENdFN-hIutdbAB9-aXVl08sXAzq_fFY4feDadOGQJH5kHBM1adSIKL2W0&usqp=CAU"
           effect="blur"
         /> */}
           <p>{channelTitle}</p>
