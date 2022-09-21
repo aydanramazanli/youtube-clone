@@ -30,7 +30,7 @@ function videoData({ video: { snippet, statistics } }) {
     <div className="videoData ">
       <div className="videoData__top py-2">
         <h4>{title}</h4>
-        <div className="d-flex justify-content-between align-items-center py-1">
+        <div className="d-flex justify-content-between align-items-center">
           <div>
             <span style={{ marginRight: "10px" }}>
               {numeral(viewCount).format("0.a")} view

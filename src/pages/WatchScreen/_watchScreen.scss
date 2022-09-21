@@ -1,9 +1,18 @@
 @import "../../app";
-
-.watchScreen__player {
-   height: 60vh;
+.watchScreen{
+   padding:1rem 1.5rem;
+   &__left{
+      margin-top: 0.15rem;
+     
+   }
+  &__player {
+   height: 75vh;
    background-color: #353946;
    width: 100%;
-   margin-bottom: 1rem;
+   margin-bottom: 0.5rem;
+
 }
+
+}
+
 

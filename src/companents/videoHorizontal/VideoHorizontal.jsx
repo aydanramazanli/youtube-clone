@@ -63,7 +63,7 @@ export default function VideoHorizontal({ video }) {
   const seconds = moment.duration(durations).asSeconds();
   const duration = moment.utc(seconds * 1000).format("mm:ss");
   return (
-    <Row className="py-1 m-1 videoHorizontal align-items-center" onClick={handleVideoClick}>
+    <Row className="videoHorizontal align-items-center" onClick={handleVideoClick}>
       <Col xs={6} md={6} className="videoHorizontal__left">
         <LazyLoadImage
           src={medium.url}

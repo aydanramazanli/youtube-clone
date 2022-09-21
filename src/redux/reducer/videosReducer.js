@@ -118,7 +118,7 @@ export const searchedVideoReducer = (
 ) => {
   const { payload, type } = action;
   switch (type) {
-    case    SEARCHED_VIDEOS_REQUEST:
+    case SEARCHED_VIDEOS_REQUEST:
       return {
         ...state,
         loading: true,
@@ -141,5 +141,5 @@ export const searchedVideoReducer = (
 };
 
 
-export default videosReducer;
-export const reducer =videosReducer.reducer;
+// export default videosReducer;
+// export const reducer =videosReducer.reducer;

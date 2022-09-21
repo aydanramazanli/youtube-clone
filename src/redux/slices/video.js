@@ -23,7 +23,7 @@ export const getHomeVideos = async (dispatch) => {
       params: {
         part: "snippet,contentDetails,statistics",
         chart: "mostPopular",
-        regionCode: "TR",
+        regionCode: "US",
         maxResults: 10,
       },
     });
@@ -109,10 +109,10 @@ export const relatedVideos = (id) => async (dispatch) => {
 };
 
 //categories
-export const getSearchingVideos = (keyword) => async (dispatch) => {
+export const getSearchingVideos = keyword => async dispatch => {
   try {
     dispatch({ type: SEARCHED_VIDEOS_REQUEST });
-    const { data } = await req(`${baseUrl}/search`, {
+    const { data } = await req(`/search`, {
       params: {
         part: "snippet",
         maxResults: 20,
@@ -124,7 +124,7 @@ export const getSearchingVideos = (keyword) => async (dispatch) => {
     dispatch({
       type: SEARCHED_VIDEOS_SUCCESS,
       payload:  data.items
-      ,
+      
     });
   } catch (err) {
     console.log(err);

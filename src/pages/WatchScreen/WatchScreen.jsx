@@ -24,8 +24,8 @@ const WatchScreen = () => {
   );
 
   return (
-    <Row style={{ padding: "1.5rem" }}>
-      <Col lg={8} style={{ padding: 0 }}>
+    <Row className='watchScreen' >
+      <Col lg={8} className='watchScreen__left' >
         <div className="watchScreen__player">
           <iframe
             src={`https://www.youtube.com/embed/${id}`}

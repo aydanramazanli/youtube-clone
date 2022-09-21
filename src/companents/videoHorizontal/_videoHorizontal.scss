@@ -2,6 +2,8 @@
 
 .videoHorizontal {
   border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.5rem;
+  padding-bottom:0.5rem;
   cursor: pointer;
   .lazy-load-image-background.blur.lazy-load-image-loaded > img {
     height:110px;
