@@ -6,7 +6,7 @@
   padding-bottom:0.5rem;
   cursor: pointer;
   .lazy-load-image-background.blur.lazy-load-image-loaded > img {
-    height:110px;
+height: 100%;
     object-fit:cover;
     width: 100%;
   }
@@ -49,7 +49,8 @@
     font-size: 0.8rem;
     letter-spacing: 0.3px;
     font-weight: 500;
-    line-height: 20px;
+  margin:0;
+  padding:0
   }
   &__desc {
     font-size: 0.9rem;

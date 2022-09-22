@@ -7,7 +7,7 @@ import request from "../../api";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from 'react-router-dom';
 
-export default function VideoHorizontal({ video }) {
+export default function VideoHorizontal({ video, searchScreen }) {
   const [durations, setDurations] = useState();
   const [view, setView] = useState();
   const [channelIcon, setChannelIcon] = useState();
@@ -17,11 +17,16 @@ export default function VideoHorizontal({ video }) {
     snippet: {
       channelId,
       channelTitle,
-      title,
+       title,
+      // description,
       publishedAt,
       thumbnails: { medium },
     },
   } = video;
+  const isVideo = id.kind==='youtube#video';
+  const thumbnail = !isVideo && 'videoHorizontal__thumbnail-channel';
+  const seconds = moment.duration(durations).asSeconds();
+  const duration = moment.utc(seconds * 1000).format("mm:ss");
 
   // video details
   useEffect(() => {
@@ -58,28 +63,35 @@ export default function VideoHorizontal({ video }) {
 
   // to video:id
   const handleVideoClick = () => {
-    navigate(`/watch/${id.videoId}`);
+    isVideo?
+    navigate(`/watch/${id.videoId}`):navigate(`/channel/${id.channelId}`);
   };
-  const seconds = moment.duration(durations).asSeconds();
-  const duration = moment.utc(seconds * 1000).format("mm:ss");
+
   return (
     <Row className="videoHorizontal align-items-center" onClick={handleVideoClick}>
-      <Col xs={6} md={6} className="videoHorizontal__left">
+      <Col xs={6} md={searchScreen?4:6} className="videoHorizontal__left">
         <LazyLoadImage
           src={medium.url}
           effect="blur"
-          className={`videoHorizontal__thumbnail `}
+          className={`videoHorizontal__thumbnail ${thumbnail}`}
           wrapperClassName="videoHorizontal__thumbnail-wrapper"
         />
-        <span className="videoHorizontal__top__duration ">{duration}</span>
+        {isVideo &&
+(        <span className="videoHorizontal__top__duration ">{duration}</span>)}
       </Col>
-      <Col xs={6} md={6} className="videoHorizontal__right p-0">
+      <Col xs={6} md={searchScreen?8:6} className="videoHorizontal__right p-0">
         <p className=" videoHorizontal__title">{title}</p>
+
+        {/* {isVideo && <p className="mt-1">{description}</p>} */}
         <div className="videoHorizontal__channel d-flex align-items-center">
-          {/* <LazyLoadImage
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWy4mGn2H4biENdFN-hIutdbAB9-aXVl08sXAzq_fFY4feDadOGQJH5kHBM1adSIKL2W0&usqp=CAU"
+          {isVideo &&
+         ( <LazyLoadImage
+          src={channelIcon?.url}
           effect="blur"
-        /> */}
+          style={{width:'20px'}}
+         
+        />)
+      }
           <p>{channelTitle}</p>
         </div>
         <div className="videoHorizontal__details">

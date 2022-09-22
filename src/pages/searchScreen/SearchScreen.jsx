@@ -4,9 +4,9 @@ import {useEffect} from 'react';
 import {getSearchingVideos} from '../../redux/slices/video';
 import { Container } from "react-bootstrap";
 import VideoHorizontal from "../../companents/videoHorizontal/VideoHorizontal";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 export default function SearchScreen() {
-  console.log(getSearchingVideos());
     const {query} = useParams();
     const dispatch = useDispatch();
 
@@ -17,9 +17,13 @@ export default function SearchScreen() {
     const {videos, loading} = useSelector(state=>state.searchedVideos);
 
   return (
-    <Container>
+    <Container style={{width:"65%"}}>
  
-      {!loading ?(videos?.map(video=><VideoHorizontal  video={video} key={video.id.videoId}/>)):<h1>Loading...</h1>}
+      {!loading ?(videos?.map(video=><VideoHorizontal  video={video} key={video.id.videoId} SearchScreen/>)): (
+          <SkeletonTheme baseColor="#fff" highlightColor="#3c4147">
+            <Skeleton width='100%' height='130' count={20}/>
+          </SkeletonTheme>
+        )}
     </Container>
   );
 }
