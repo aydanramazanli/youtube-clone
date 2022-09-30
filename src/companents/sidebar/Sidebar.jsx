@@ -1,8 +1,9 @@
-import React from "react";
+
 import { useDispatch } from "react-redux";
 import "./_sidebar.scss";
+
 import { logoutAuth } from "../../redux/slices/auth";
-import { FaBars } from "react-icons/fa";
+//import { FaBars } from "react-icons/fa";
 import {
   MdSubscriptions,
   MdExitToApp,
@@ -15,27 +16,26 @@ import {
   MdAccessTime,
   MdNewLabel,
 } from "react-icons/md";
-import logo from "../../images/logo.png";
+//import logo from "../../images/logo.png";
 
-function Sidebar({ handleClick }) {
+function Sidebar() {
   const dispatch = useDispatch();
   const handleLogOut = () => {
     dispatch(logoutAuth());
   };
   return (
     <nav className="sidebar">
-      <li style={{ display: "flex", alignItems: "center" }} className="list">
-        <FaBars className="header__menu" size={26} onClick={handleClick} />
-        <img src={logo} alt="" style={{ width: "80px", height: "30px", objectFit:"cover", margin:"5px" }} />
-      </li>
+
       <li className="list">
         <MdHome size={23} />
         <span>Home</span>
       </li>
-      <li className="list">
-        <MdSubscriptions size={23} />
-        <span>Subscriptions</span>
-      </li>
+    
+        <li className="list">
+          <MdSubscriptions size={23} />
+          <span>Subscriptions</span>
+        </li>
+
 
       <li className="list">
         <MdHistory size={23} />

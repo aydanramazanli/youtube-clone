@@ -1,20 +1,19 @@
 @import "../../style/base.scss";
 
 .videoHorizontal {
-  border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 0.5rem;
-  padding-bottom:0.5rem;
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.5rem;
   cursor: pointer;
   .lazy-load-image-background.blur.lazy-load-image-loaded > img {
-height: 100%;
-    object-fit:cover;
+    height: 100%;
+    object-fit: cover;
     width: 100%;
   }
 
   &__left {
     position: relative;
     text-align: center;
-    padding-left: 0 ;
+    padding-left: 0;
   }
 
   &__thumbnail {
@@ -41,35 +40,34 @@ height: 100%;
 
   &__details {
     font-size: 0.9rem;
-    color:gray;
-    font-weight: 500
+    color: gray;
+    font-weight: 500;
   }
 
   &__title {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 0.3px;
     font-weight: 500;
-  margin:0;
-  padding:0
+    margin: 0;
+    padding: 0;
   }
   &__desc {
     font-size: 0.9rem;
-   ;
   }
 
   &__channel {
     img {
       width: 16px;
       height: 16px;
-
       border-radius: 50%;
       margin-right: 0.5rem;
       cursor: pointer;
     }
     p {
       font-size: 0.9rem;
-      color:gray;
+      color: gray;
       font-weight: 500;
+      margin: 0.5rem 0;padding:0
     }
   }
 }

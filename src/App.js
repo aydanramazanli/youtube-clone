@@ -6,17 +6,16 @@ import Header from "./companents/header/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SearchScreen from "./pages/searchScreen/SearchScreen";
+
 import { Container } from "react-bootstrap";
 import "./style/_base.scss";
 import "./_app.scss";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import WatchScreen from "./pages/watchScreen/WatchScreen";
 
-
 const Layout = ({ children }) => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(true);
-
 
   const handleClick = () => {
     setVisible(!visible);
@@ -59,9 +58,15 @@ const App = () => {
         ></Route>
 
         <Route path="/auth" element={<Login />} />
-		<Route path="/watch/:id" element={ <Layout>
-            <WatchScreen />
-            </Layout>} />
+        <Route
+          path="/watch/:id"
+          element={
+            <Layout>
+              <WatchScreen />
+            </Layout>
+          }
+        />
+       
 
         <Route
           path="/search/:query"
@@ -71,6 +76,7 @@ const App = () => {
             </Layout>
           }
         ></Route>
+        
 
         <Route
           path="*"

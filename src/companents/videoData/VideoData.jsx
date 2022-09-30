@@ -9,7 +9,7 @@ import moment from "moment";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 
 function videoData({ video: { snippet, statistics } }) {
-  const [readMore, setReadMore] = useState(false);
+  const [readMore, setReadMore] = useState(true);
   const [subscribes, setSubscribes] = useState(false);
   const { channelId, channelTitle, description, publishedAt, title } = snippet;
   const { likeCount, viewCount } = statistics;
@@ -28,7 +28,7 @@ function videoData({ video: { snippet, statistics } }) {
 
   return (
     <div className="videoData ">
-      <div className="videoData__top py-2">
+      <div className="videoData__top ">
         <h4>{title}</h4>
         <div className="d-flex justify-content-between align-items-center">
           <div>
@@ -71,7 +71,7 @@ function videoData({ video: { snippet, statistics } }) {
             setReadMore(!readMore);
           }}
         >
-          {readMore ? "Read Less" : "Read Description"}
+          {readMore ? "Read Less" : "Read More"}
         </h4>
         {readMore && <p>{description}</p>}
       </div>

@@ -20,6 +20,7 @@ export default function VideoHorizontal({ video, searchScreen }) {
        title,
       // description,
       publishedAt,
+      resourceId,
       thumbnails: { medium },
     },
   } = video;
@@ -62,9 +63,10 @@ export default function VideoHorizontal({ video, searchScreen }) {
   }, [channelId]);
 
   // to video:id
+  const singleChannelId = resourceId?.channelId || channelId;
   const handleVideoClick = () => {
     isVideo?
-    navigate(`/watch/${id.videoId}`):navigate(`/channel/${id.channelId}`);
+    navigate(`/watch/${id.videoId}`):navigate(`/channel/${singleChannelId}`);
   };
 
   return (
@@ -75,14 +77,13 @@ export default function VideoHorizontal({ video, searchScreen }) {
           effect="blur"
           className={`videoHorizontal__thumbnail ${thumbnail}`}
           wrapperClassName="videoHorizontal__thumbnail-wrapper"
+          style ={searchScreen?{width:"50%"}:{width:"100%"}}
         />
         {isVideo &&
 (        <span className="videoHorizontal__top__duration ">{duration}</span>)}
       </Col>
       <Col xs={6} md={searchScreen?8:6} className="videoHorizontal__right p-0">
         <p className=" videoHorizontal__title">{title}</p>
-
-        {/* {isVideo && <p className="mt-1">{description}</p>} */}
         <div className="videoHorizontal__channel d-flex align-items-center">
           {isVideo &&
          ( <LazyLoadImage

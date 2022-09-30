@@ -11,8 +11,12 @@ import {
   SEARCHED_VIDEOS_REQUEST,
   SEARCHED_VIDEOS_SUCCESS,
   SEARCHED_VIDEOS_FAIL,
+  CHANNEL_VIDEOS_SUCCESS,
+  CHANNEL_VIDEOS_REQUEST,
+  CHANNEL_VIDEOS_FAIL
 } from "../actionType";
 
+// Home videos
 export const videosReducer = (
   state = {
     videos: [],
@@ -111,7 +115,7 @@ export const relatedVideoReducer = (
   }
 };
 
-// related video
+// searched video
 export const searchedVideoReducer = (
   state = { loading: true, videos: [] },
   action
@@ -140,6 +144,39 @@ export const searchedVideoReducer = (
   }
 };
 
+// channel video 
+export const channelVideoReducer = (
+  state = {
+     loading: true,
+     videos: [],
+  },
+  action
+) => {
+  const { payload, type } = action;
+
+  switch (type) {
+     case CHANNEL_VIDEOS_REQUEST:
+        return {
+           ...state,
+           loading: true,
+        };
+     case CHANNEL_VIDEOS_SUCCESS:
+        return {
+           ...state,
+           videos: payload,
+           loading: false,
+        };
+     case CHANNEL_VIDEOS_FAIL:
+        return {
+           ...state,
+           loading: false,
+           error: payload,
+        };
+
+     default:
+        return state;
+  }
+};
 
 // export default videosReducer;
 // export const reducer =videosReducer.reducer;

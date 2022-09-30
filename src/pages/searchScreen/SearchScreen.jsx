@@ -1,4 +1,5 @@
 import {useParams} from 'react-router-dom';
+import './_searchScreen.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
 import {getSearchingVideos} from '../../redux/slices/video';
@@ -17,8 +18,9 @@ export default function SearchScreen() {
     const {videos, loading} = useSelector(state=>state.searchedVideos);
 
   return (
-    <Container style={{width:"65%"}}>
- 
+
+    <Container className="search-container">
+
       {!loading ?(videos?.map(video=><VideoHorizontal  video={video} key={video.id.videoId} SearchScreen/>)): (
           <SkeletonTheme baseColor="#fff" highlightColor="#3c4147">
             <Skeleton width='100%' height='130' count={20}/>

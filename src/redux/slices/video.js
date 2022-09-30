@@ -10,7 +10,8 @@ import {
   RELATED_VIDEOS_FAIL,
   SEARCHED_VIDEOS_REQUEST,
   SEARCHED_VIDEOS_SUCCESS,
-  SEARCHED_VIDEOS_FAIL
+  SEARCHED_VIDEOS_FAIL,
+
 } from "../actionType";
 import req from "../../api";
 
@@ -131,3 +132,4 @@ export const getSearchingVideos = keyword => async dispatch => {
     dispatch({ type: SEARCHED_VIDEOS_FAIL, payload: err.message });
   }
 };
+

@@ -12,7 +12,7 @@ const { authorProfileImageUrl,authorDisplayName,textDisplay,publishedAt}= single
           {authorDisplayName}
           <span> {moment(publishedAt).fromNow()} ago</span>
         </p>
-        <p>{textDisplay}</p>
+        <p className="singleComment__comment">{textDisplay}</p>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const store = configureStore({
     channelDetails:channelDeatilReducer,
     commentList:commentReducer,
     relatedVideos:relatedVideoReducer,
-    searchedVideos:searchedVideoReducer
+    searchedVideos:searchedVideoReducer,
   },
 });
 
