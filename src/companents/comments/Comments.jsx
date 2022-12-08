@@ -2,7 +2,7 @@ import "./_comments.scss";
 import Comment from "../Comment/Comment";
 import shortid from "shortid";
 import { useDispatch, useSelector } from "react-redux";
-import { getCommentList } from "../../Redux/slices/comment";
+import { getCommentList } from "../../Redux/Slices/comment";
 import { useEffect } from "react";
 
 const Comments = ({ videoId, totalComments }) => {

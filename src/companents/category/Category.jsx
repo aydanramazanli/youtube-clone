@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './_category.scss';
 import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid';
-import { getCategories, getHomeVideos } from '../../Redux/slices/video';
+import { getCategories, getHomeVideos } from '../../Redux/Slices/video';
 
 const keywords = [
 	'All',

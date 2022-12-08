@@ -3,7 +3,7 @@ import "./_videoData.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getChannelDetails,
-} from "../../Redux/slices/channel";
+} from "../../Redux/Slices/channel";
 import numeral from "numeral";
 import moment from "moment";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import Comments from "../../Companents/Comments/Comments";
 import VideoHorizontal from "../../Companents/VideoHorizontal/VideoHorizontal";
 import VideoData from "../../Companents/VideoData/VideoData";
-import { getVideoById, relatedVideos } from "../../Redux/slices/video";
+import { getVideoById, relatedVideos } from "../../Redux/Slices/video";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const WatchScreen = () => {

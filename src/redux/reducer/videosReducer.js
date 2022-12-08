@@ -14,7 +14,7 @@ import {
   CHANNEL_VIDEOS_SUCCESS,
   CHANNEL_VIDEOS_REQUEST,
   CHANNEL_VIDEOS_FAIL
-} from "../actionType";
+} from "../ActionType";
 
 // Home videos
 export const videosReducer = (

@@ -3,7 +3,7 @@ import {
   COMMENT_LIST_FAIL,
   COMMENT_LIST_SUCCESS,
 
-} from "../actionType";
+} from "../ActionType";
 import req from "../../api";
 export const getCommentList = (id) => async (dispatch) => {
   try {

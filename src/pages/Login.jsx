@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import { loginAuth } from '../Redux/slices/auth';
+import { loginAuth } from '../Redux/Slices/auth';
 import './_login.scss';
 import logo from '../Images/logo.png';
 

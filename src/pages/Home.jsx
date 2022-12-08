@@ -4,7 +4,7 @@ import Category from '../Companents/Category/Category';
 import uniqid from 'uniqid';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { getHomeVideos } from '../Redux/slices/video';
+import { getHomeVideos } from '../Redux/Slices/video';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import SkeletonVideo from '../Companents/Skeletons/skeletonVideo';
 

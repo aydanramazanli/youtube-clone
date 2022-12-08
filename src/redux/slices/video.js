@@ -12,7 +12,7 @@ import {
   SEARCHED_VIDEOS_SUCCESS,
   SEARCHED_VIDEOS_FAIL,
 
-} from "../actionType";
+} from "../ActionType";
 import req from "../../api";
 
 const baseUrl = "https://youtube.googleapis.com/youtube/v3";
