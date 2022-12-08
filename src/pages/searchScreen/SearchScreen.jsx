@@ -2,9 +2,9 @@ import {useParams} from 'react-router-dom';
 import './_searchScreen.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
-import {getSearchingVideos} from '../../redux/slices/video';
+import {getSearchingVideos} from '../../Redux/slices/video';
 import { Container } from "react-bootstrap";
-import VideoHorizontal from "../../companents/VideoHorizontal/VideoHorizontal";
+import VideoHorizontal from "../../Companents/VideoHorizontal/VideoHorizontal";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 export default function SearchScreen() {

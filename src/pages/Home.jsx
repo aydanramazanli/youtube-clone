@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import Video from '../companents/video/Video';
-import Category from '../companents/category/Category';
+import Video from '../Companents/Video/Video';
+import Category from '../Companents/Category/Category';
 import uniqid from 'uniqid';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { getHomeVideos } from '../redux/slices/video';
+import { getHomeVideos } from '../Redux/slices/video';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import SkeletonVideo from '../companents/skeletons/skeletonVideo';
+import SkeletonVideo from '../Companents/Skeletons/skeletonVideo';
 
 function Home() {
   const dispatch = useDispatch();

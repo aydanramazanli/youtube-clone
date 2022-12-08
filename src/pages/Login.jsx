@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import { loginAuth } from '../redux/slices/auth';
+import { loginAuth } from '../Redux/slices/auth';
 import './_login.scss';
-import logo from '../images/logo.png';
+import logo from '../Images/logo.png';
 
 export default function Login() {
 const dispatch=useDispatch();

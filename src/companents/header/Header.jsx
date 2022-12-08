@@ -3,7 +3,7 @@ import "./_header.scss";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdNotifications, MdApps } from "react-icons/md";
-import logo from "../../images/logo.png";
+import logo from "../../Images/logo.png";
 import {useNavigate, Link} from 'react-router-dom';
 
 function Header({ handleClick }) {

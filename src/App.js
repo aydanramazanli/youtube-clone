@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Sidebar from "./companents/Sidebar/Sidebar";
-import SideIcons from "./companents/Sidebar/SideIcons";
-import Header from "./companents/Header/Header";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import SearchScreen from "./pages/searchScreen/SearchScreen";
+import Sidebar from "./Companents/Sidebar/Sidebar";
+import SideIcons from "./Companents/Sidebar/SideIcons";
+import Header from "./Companents/Header/Header";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import SearchScreen from "./Pages/searchScreen/SearchScreen";
 
 import { Container } from "react-bootstrap";
 import "./style/_base.scss";

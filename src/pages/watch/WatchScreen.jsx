@@ -3,10 +3,10 @@ import "./_watchScreen.scss";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Comments from "../../companents/Comments/Comments";
-import VideoHorizontal from "../../companents/VideoHorizontal/VideoHorizontal";
-import VideoData from "../../companents/VideoData/VideoData";
-import { getVideoById, relatedVideos } from "../../redux/slices/video";
+import Comments from "../../Companents/Comments/Comments";
+import VideoHorizontal from "../../Companents/VideoHorizontal/VideoHorizontal";
+import VideoData from "../../Companents/VideoData/VideoData";
+import { getVideoById, relatedVideos } from "../../Redux/slices/video";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const WatchScreen = () => {

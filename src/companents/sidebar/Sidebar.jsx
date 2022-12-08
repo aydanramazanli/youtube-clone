@@ -2,7 +2,7 @@
 import { useDispatch } from "react-redux";
 import "./_sidebar.scss";
 
-import { logoutAuth } from "../../redux/slices/auth";
+import { logoutAuth } from "../../Redux/slices/auth";
 //import { FaBars } from "react-icons/fa";
 import {
   MdSubscriptions,
