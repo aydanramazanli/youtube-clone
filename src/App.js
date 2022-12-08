@@ -11,7 +11,7 @@ import { Container } from "react-bootstrap";
 import "./style/_base.scss";
 import "./_app.scss";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import WatchScreen from "./pages/watchScreen/WatchScreen";
+import WatchScreen from "./pages/watch/WatchScreen";
 
 const Layout = ({ children }) => {
   const navigate = useNavigate();
