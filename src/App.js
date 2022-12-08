@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Sidebar from "./companents/sidebar/Sidebar";
-import SideIcons from "./companents/sidebar/SideIcons";
-import Header from "./companents/header/Header";
+import Sidebar from "./companents/Sidebar/Sidebar";
+import SideIcons from "./companents/Sidebar/SideIcons";
+import Header from "./companents/Header/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SearchScreen from "./pages/searchScreen/SearchScreen";

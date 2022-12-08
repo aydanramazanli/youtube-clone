@@ -3,9 +3,9 @@ import "./_watchScreen.scss";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Comments from "../../companents/comments/Comments";
-import VideoHorizontal from "../../companents/videoHorizontal/VideoHorizontal";
-import VideoData from "../../companents/videoData/VideoData";
+import Comments from "../../companents/Comments/Comments";
+import VideoHorizontal from "../../companents/VideoHorizontal/VideoHorizontal";
+import VideoData from "../../companents/VideoData/VideoData";
 import { getVideoById, relatedVideos } from "../../redux/slices/video";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 

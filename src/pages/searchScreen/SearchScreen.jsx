@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
 import {getSearchingVideos} from '../../redux/slices/video';
 import { Container } from "react-bootstrap";
-import VideoHorizontal from "../../companents/videoHorizontal/VideoHorizontal";
+import VideoHorizontal from "../../companents/VideoHorizontal/VideoHorizontal";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 export default function SearchScreen() {
